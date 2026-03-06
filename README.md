@@ -2,6 +2,10 @@
 
 
 
+<div align="center">
+    <img src="https://cdn.discordapp.com/attachments/484846778860961824/1479538687560781834/image.png?ex=69ac6747&is=69ab15c7&hm=a302b60315e6715fbfa4b24785ab90497ab5f522d726abadb03d39f28f43c31a&" title="source: imgur.com" />
+</div>						
+
 
 ## 1. Descrição
 
@@ -31,11 +35,10 @@ API do **7Fit** gerencia o ciclo de vida de atividades esportivas coletivas, int
 
 ## 3. Diagrama de Classes
 
-Adicione a imagem do Diagrama de Classes (se houver)
-
 <div align="center">
-    <img src="mudar" title="source: imgur.com" width="50%"/>
+    <img src="https://cdn.discordapp.com/attachments/484846778860961824/1479538261599981768/imagem_2026-03-06_145603888.png?ex=69ac66e2&is=69ab1562&hm=ed22a42e9a94ad2ca28a2a3765d961de2ac6aac7c82a780ace124bbe362243cb&" title="source: imgur.com" width="50%"/>
 </div>
+
 
 ------
 
@@ -44,8 +47,9 @@ Adicione a imagem do Diagrama de Classes (se houver)
 Adicione a imagem do DER
 
 <div align="center">
-    <img src="imagem" title="source: imgur.com" />
+    <img src="https://cdn.discordapp.com/attachments/484846778860961824/1479538261599981768/imagem_2026-03-06_145603888.png?ex=69ac66e2&is=69ab1562&hm=ed22a42e9a94ad2ca28a2a3765d961de2ac6aac7c82a780ace124bbe362243cb&" title="source: imgur.com" />
 </div>
+
 
 
 
