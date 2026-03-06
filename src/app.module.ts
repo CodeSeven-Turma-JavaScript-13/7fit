@@ -2,6 +2,8 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { Atividade } from './atividade/entities/atividade.entity';
+import { AtividadeModule } from './atividade/atividade.module';
 
 @Module({
    //Criação da conexão com o banco de dados
@@ -12,14 +14,14 @@ import { TypeOrmModule } from '@nestjs/typeorm';
     username: 'root',
     password: 'root',
     database: 'db_7fit',
-    entities: [],
+    entities: [Atividade],
     //Synchronize é para sincronizar as funções, em produção deixamos a opção em false
     synchronize: true,
   }),
-
-
+  AtividadeModule
+  
   ],
-  controllers: [AppController],
-  providers: [AppService],
+  controllers: [],
+  providers: [],
 })
 export class AppModule {}
