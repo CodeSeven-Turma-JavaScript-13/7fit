@@ -75,6 +75,7 @@ export class AtividadeService{
 
         //Checa se a Atividade existe
         await this.findById(atividade.id);
+        
 
         //UPDATE tb_postagens SET  titulo? , texto = ?. data= CURRENT_TIMESTAMP() WHERE id = ?;
         return await this.atividadeRepository.save(atividade);

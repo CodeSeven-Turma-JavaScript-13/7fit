@@ -12,7 +12,7 @@ import { AtividadeModule } from './atividade/atividade.module';
     host: 'localhost',
     port: 3306,
     username: 'root',
-    password: 'root',
+    password: '0800',
     database: 'db_7fit',
     entities: [Atividade],
     //Synchronize é para sincronizar as funções, em produção deixamos a opção em false
