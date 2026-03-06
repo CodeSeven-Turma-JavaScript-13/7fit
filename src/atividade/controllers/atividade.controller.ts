@@ -28,17 +28,15 @@ export class AtividadeController{
         return this.atividadeService.findById(id);
     }
 
-    @Get('/exercicio/:exercicio')
-     @HttpCode(HttpStatus.OK)
-     findAllByExercicio(@Param('exercicio') exercicio: string):Promise<Atividade[]>{
-        return this.exercicioService.findAllByExercicio(exercicio);
-     }
+   @Get('/exercicio/:exercicio')
+findAllByExercicio(@Param('exercicio') exercicio: string): Promise<Atividade[]> {
+    return this.atividadeService.findAllByExercicio(exercicio);
+}
 
-     @Get('/local/:local')
-     @HttpCode(HttpStatus.OK)
-     findAllByLocal(@Param('local') local: string):Promise<Atividade[]>{
-        return this.exercicioService.findAllByLocal(local);
-     }
+@Get('/local/:local')
+findAllByLocal(@Param('local') local: string): Promise<Atividade[]> {
+    return this.atividadeService.findAllByLocal(local);
+}
 
 
      @Post()

@@ -1,4 +1,4 @@
-import { HttpException, HttpStatus, Injectable } from "@nestjs/common";
+import { HttpException, HttpStatus, Injectable, NotFoundException } from "@nestjs/common";
 import { InjectRepository } from "@nestjs/typeorm";
 import { Atividade } from "../entities/atividade.entity";
 import { DeleteResult, ILike, Repository } from "typeorm";
@@ -7,6 +7,7 @@ import { DeleteResult, ILike, Repository } from "typeorm";
 @Injectable()
 
 export class AtividadeService{
+    atividadeService: any;
 
     constructor(
         @InjectRepository(Atividade)
@@ -32,28 +33,34 @@ export class AtividadeService{
     }
 
     //PROCURAR POR EXERCICIO
-    async findAllByExercicio(exercicio: string):Promise<Atividade[]>{
-        if(!exercicio)
-            throw new HttpException("Exercicio não encontrado!!", HttpStatus.BAD_REQUEST);
-        return this.atividadeRepository.find({
-            where:{
-                exercicio: ILike(`%${exercicio}%`)
-            }
-        })
+    async findAllByExercicio(exercicio: string): Promise<Atividade[]> {
+    const atividade = await this.atividadeRepository.find({
+        where: {
+            exercicio: ILike(`%${exercicio}%`)
+        }
+    });
+
+    if (!atividade.length) {
+        throw new NotFoundException('Esporte não encontrado');
     }
+
+    return atividade;
+}
 
     //PROCURAR POR LOCAL
-    async findAllByLocal(local: string):Promise<Atividade[]>{
-        if(!local)
-            throw new HttpException("O local é não encontrado!!", HttpStatus.BAD_REQUEST);
+    async findAllByLocal(local: string): Promise<Atividade[]> {
+    const lugar = await this.atividadeRepository.find({
+        where: {
+            local: ILike(`%${local}%`)
+        }
+    });
 
-        return this.atividadeRepository.find({
-            where:{
-                local: ILike(`%${local}%`)
-            }
-        })
+    if (!lugar.length) {
+        throw new NotFoundException('Local não encontrado');
     }
 
+    return lugar;
+}
     //CRIAR ATIVIDADE
     async create(atividade: Atividade): Promise<Atividade>{
 

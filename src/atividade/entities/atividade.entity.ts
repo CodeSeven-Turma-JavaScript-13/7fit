@@ -27,16 +27,26 @@ export class Atividade{
     //CRIAÇÃO DA DATA DO EVENTO
     @Transform(({value}: TransformFnParams)=> value?.trim())
     @IsNotEmpty()
-    @Column({ type: 'datetime', nullable: false }) // 'datetime' ou 'timestamp'
+    @Column({ type: 'date', nullable: false }) // 'datetime' ou 'timestamp'
     dataEvento: Date;
 
     //CRIAÇÃO DO DIA DA CRIAÇÃO DO EVENTO
-    @UpdateDateColumn()
-    dataCriacao: Date;
-
-    //Quantidade de Participantes
+    //@UpdateDateColumn()
+    //dataCriacao: Date;
+    //NOME DO CRIADOR
     @Transform(({value}: TransformFnParams)=> value?.trim())
     @IsNotEmpty()
+    @Column({length: 280, nullable: false})
+    nomeCriador: string;
+
+    //Horario do Evento
+    @Column({ type: 'time' })
+    horaEvento: string;
+
+
+    //Quantidade de Participantes
+    @IsNotEmpty()
+    @Column()
     participantesQuant: number;
 
 }
